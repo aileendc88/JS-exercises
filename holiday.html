@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+<ul>
+<script>
+
+function holidayCount (a1, a2){	
+
+function holidayCount (a1, a2){
+	
+	var a1Holiday = 0;
+	var a2Holiday = 0;
+	
+	for (var i in a1) {
+		if(a1[i] % a1[i] === 0){
+			a1Holiday = a1[i];
+		}
+	}
+	for (var j in a2) {
+		if(a2[j] % a2[j] === 0){
+			a2Holiday = a2[j];
+		}
+	}
+	
+	if (a1Holiday > a2Holiday){
+		return "Right";
+	}
+	
+	if (a1Holiday < a2Holiday){
+		return "Wrong";
+	}
+	
+	if (a1Holiday === a2Holiday) {
+		return "Same";
+	}
+	
+	if ((a1Holiday % a1Holiday != 0) || (a2Holiday % a2Holiday != 0) ) {
+		return "Not possible";
+	}
+}
+
+
+</script>
+</ul>
+
+	
+</body>
+</html>

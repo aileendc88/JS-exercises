@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+<script>
+var text = "My pretty Aileen. You can never disever my soul from Aileen";
+var myName = "Aileen";
+var hits = [];
+
+for (var i = 0; i < text.length; i++) {
+if (text[i] === "A") {
+for (var j = i; j < i + myName.length; j++) {
+	hits.push(text[j]);
+}
+}
+}
+
+if (hits.length === 0){
+document.write("Your name wasn't found");
+}
+else {
+document.write(hits);
+}
+
+
+
+
+
+
+
+</script>
+
+
+	
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+<script>
+//Remember, callbacks are just closures that are invoked when a certain condition is met. 
+
+/*The following two functions are broken. Fix them by adding/changing what is needed to make the greaterThan100 function callback to the grow function.*/
+
+
+function grow(num) {
+  if(num < 100) {
+    return num *10;
+  }
+}
+
+function greaterThan100(num, callback) {
+  if(num < 100) {
+    return callback(num);
+  } else {
+    return num;
+  }
+}
+
+console.log(greaterThan100(9, grow));
+
+
+/*You are some what familiar with some higher order functions such as map and forEach. Let's see why they are higher order functions and closures AND callbacks*/
+
+/*Here is the syntax for forEach: 
+
+array.forEach(callback(){
+              do something
+              });
+*/
+
+[1,2,3].forEach(function(item) {        //forEach is a method of arrays 
+  return item * item;
+});
+
+//See how forEach takes a function as a parameter? That makes it a_______? callback/ higher order function
+
+
+
+//After looking at forEach why do you think forEach is a callback //function?
+// - forEach takes another function as an argument
+
+function factorial(n) {
+  if(n === 1) {
+    return 1;
+  } else {
+    return n * factorial(n-1);
+  }
+}
+console.log(factorial(3));
+
+//Explain the above recursive function. How does it work and why? 
+// recursive function is a function that continuously calls itself until a condition is met
+//for the factorial function above, n !== 1, so it would execute the code inside else cond 
+// it would return 3 * factorial(3-1) === 6
+// now n === 2, so it would call factorial(2-1) === 2
+// now n === 1, it would call factorial(1-1)  === 1
+
+
+//Fix the below function to properly CALLBACK to the factorial function
+
+
+function greater100(n, callback) {
+ 
+    return callback(n);
+  
+}
+
+console.log(greater100(10,factorial));    //should log the factorial of
+
+
+//Let's take a look at callback's in an asynchronous manner
+
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(alertFunc, 3000);
+}
+
+function alertFunc() {
+    alert("Hello!");
+}
+
+//Once you correct the first problem hit run. To see an asynchronous //callback in action
+
+alertFunc();
+
+function double(array) {
+  newArray = array.map(function(itemInArray){return 2*itemInArray;});
+  return newArray;
+}
+
+console.log(double(list));
+
+function doubleArray(array,callback){
+  var sum = 0, newArray;
+ 
+  for (var i in array){
+    sum += array[i];
+  }
+ 
+  if(sum > 100){
+    console.log ("Yay!, sum is " + sum);
+  }
+  else 
+  {
+    while (sum < 100){
+      sum = 0;
+      newArray = callback(array);
+      
+      for(var item in newArray){
+        sum += newArray[item];
+      }
+      array = newArray;
+    }
+    return sum;
+   } 
+}
+
+console.log(doubleArray(list,double));
+
+}
+</script>
+
+
+	
+</body>
+</html>

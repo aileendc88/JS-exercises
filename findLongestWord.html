@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+<script>
+var myArray = ['flowers', 'birds','tablecloth','television'];
+
+function findLongestWord (array) {
+	var longestWord = array[0];
+	for (var i = 1; i < array.length; i++) {
+		if (longestWord.length < array[i].length) {
+			longestWord = array[i];
+			console.log(longestWord.length);
+		}
+	}
+}
+
+findLongestWord(myArray);
+</script>
+
+
+	
+</body>
+</html>

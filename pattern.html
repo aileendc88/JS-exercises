@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+<script>
+function pattern(n){
+ var output1=[1];
+ 
+	for (var i=1; i<n; i++){
+			output1.push("*");
+		}
+	output1.push(n);
+ output= output1.join(""); 
+ return output;
+
+}
+
+console.log(pattern(5));
+</script>
+
+
+	
+</body>
+</html>

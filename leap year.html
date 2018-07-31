@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+<ul>
+<script>
+
+function yearDays(year) {
+   if ((year % 4 === 0) || ((year % 100 === 0) && (year % 400 === 0))) {
+       return (year + " has 366 days");
+   } else {
+       return year + " has 365 days";
+   }
+ 
+}
+console.log(yearDays(0));
+
+
+
+</script>
+</ul>
+
+	
+</body>
+</html>
